@@ -26,10 +26,11 @@ const AllBeers = (props) => {
     <div>
         {allBeers.map((beer) => {
             return <div className='ListOfBeers' key={beer._id}>
-            <li>{beer.name}</li>
-            <li>{beer.image_url}</li>
+            <li><Link to={`/beer/${beer._id}`}>{beer.name}</Link></li>
+            <img src={beer.image_url} />
             <li>{beer.tagline}</li>
             <li>{beer.description}</li>
+            <li>{beer.contributed_by}</li>
 
             {/* beer={beer} /> */}
             </div>
